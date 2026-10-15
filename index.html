@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176d59">
+  <title>Wechat | Chats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="messenger" aria-label="Wechat chats">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="Wechat home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Wechat</span>
+        </a>
+        <button class="icon-button compose-button" type="button" aria-label="Compose a new message" title="Compose">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </div>
+
+      <div class="sidebar-heading">
+        <div>
+          <p class="eyebrow">STAY IN THE LOOP</p>
+          <h1>Chats <span class="total-count">4</span></h1>
+        </div>
+        <button class="filter-button" type="button" id="online-filter" aria-label="Show online contacts only" title="Show online contacts only" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10m-7 5h4"/></svg>
+        </button>
+      </div>
+
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        <input id="search-input" type="search" placeholder="Search chats" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+
+      <div class="list-label"><span>RECENT</span><button type="button" id="all-messages">View all</button></div>
+      <nav class="conversation-list" aria-label="Recent conversations" id="conversation-list">
+        <button class="conversation active" type="button" data-contact="rahul" aria-current="page">
+          <span class="avatar-wrap"><img class="avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt=""><i class="presence"></i></span>
+          <span class="conversation-copy"><span class="conversation-top"><strong>Rahul Sharma</strong><time>10:42</time></span><span class="conversation-bottom"><span class="preview">Let’s review the project plan today.</span></span></span>
+        </button>
+        <button class="conversation" type="button" data-contact="priya">
+          <span class="avatar-wrap"><img class="avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Priya%20Nair&backgroundColor=c0aede" alt=""><i class="presence online"></i></span>
+          <span class="conversation-copy"><span class="conversation-top"><strong>Priya Nair</strong><time>10:18</time></span><span class="conversation-bottom"><span class="preview">The API tests are ready for review.</span></span></span>
+        </button>
+        <button class="conversation" type="button" data-contact="vikram">
+          <span class="avatar-wrap"><img class="avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Vikram%20Patel&backgroundColor=ffd5dc" alt=""><i class="presence"></i></span>
+          <span class="conversation-copy"><span class="conversation-top"><strong>Vikram Patel</strong><time>Yesterday</time></span><span class="conversation-bottom"><span class="preview">I’ve added notes to the project doc.</span></span></span>
+        </button>
+        <button class="conversation" type="button" data-contact="neha">
+          <span class="avatar-wrap"><img class="avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Neha%20Joshi&backgroundColor=d1f4d3" alt=""><i class="presence"></i></span>
+          <span class="conversation-copy"><span class="conversation-top"><strong>Neha Joshi</strong><time>Yesterday</time></span><span class="conversation-bottom"><span class="preview">Can take the testing task this sprint.</span></span></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="your-profile"><img src="https://api.dicebear.com/9.x/big-ears/svg?seed=Arjun%20Menon&backgroundColor=ffdfbf" alt=""><span><strong>Arjun Menon</strong><small>Personal account</small></span></div>
+      </div>
+    </aside>
+
+    <section class="chat-panel" aria-label="Conversation with Rahul Sharma">
+      <header class="chat-header">
+        <button class="mobile-back icon-button" id="mobile-back" type="button" aria-label="Back to conversations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <img class="header-avatar" id="header-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="">
+        <div class="header-person"><h2 id="header-name">Rahul Sharma</h2><p id="last-seen">Last seen today at 10:42 AM</p></div>
+        <div class="header-actions">
+          <button class="icon-button" id="voice-call" type="button" aria-label="Voice call" title="Voice call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H5a2 2 0 0 0-2 2c0 8.84 7.16 16 16 16a2 2 0 0 0 2-2v-2l-5-2-2 3a14 14 0 0 1-7-7l3-2-2-5Z"/></svg></button>
+          <button class="icon-button" id="video-call" type="button" aria-label="Video call" title="Video call"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></button>
+        </div>
+      </header>
+
+      <div class="conversation-body" id="conversation-body" aria-live="polite">
+        <div class="date-divider"><span></span><time>TODAY</time><span></span></div>
+        <div class="message-row incoming">
+          <img class="message-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="Rahul Sharma">
+          <div class="message-content"><div class="bubble">Hi! How are you?</div><time class="message-time">10:40 AM</time></div>
+        </div>
+        <div class="message-row outgoing">
+          <div class="message-content"><div class="bubble">I'm good! How about you?</div><time class="message-time">10:41 AM <span class="read-check" aria-label="Read">✓✓</span></time></div>
+        </div>
+        <div class="message-row incoming">
+          <img class="message-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="Rahul Sharma">
+          <div class="message-content"><div class="bubble">I'm doing great, thanks!</div><time class="message-time">10:42 AM</time></div>
+        </div>
+        <div class="message-row incoming">
+          <img class="message-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="Rahul Sharma">
+          <div class="message-content"><div class="bubble">Can we review the sprint tasks at the office today?</div><time class="message-time">10:43 AM</time></div>
+        </div>
+        <div class="message-row outgoing">
+          <div class="message-content"><div class="bubble">Sure. I'll finish the API integration checklist before lunch.</div><time class="message-time">10:44 AM <span class="read-check" aria-label="Read">✓✓</span></time></div>
+        </div>
+        <div class="message-row incoming">
+          <img class="message-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="Rahul Sharma">
+          <div class="message-content"><div class="bubble">Great. Please update the project timeline before stand-up too.</div><time class="message-time">10:45 AM</time></div>
+        </div>
+        <div class="message-row outgoing">
+          <div class="message-content"><div class="bubble">Done. I'll share the revised plan with the team at 2 PM.</div><time class="message-time">10:46 AM <span class="read-check" aria-label="Read">✓✓</span></time></div>
+        </div>
+        <div class="message-row incoming">
+          <img class="message-avatar" src="https://api.dicebear.com/9.x/big-ears/svg?seed=Rahul%20Sharma&backgroundColor=b6e3f4" alt="Rahul Sharma">
+          <div class="message-content"><div class="bubble">Perfect, thanks. Let's go through it together this afternoon.</div><time class="message-time">10:47 AM</time></div>
+        </div>
+      </div>
+
+      <form class="composer" id="message-form">
+        <button class="icon-button attach-button" type="button" aria-label="Attach a file" title="Attach a file"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 11.5-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.19 9.19a2 2 0 0 1-2.83-2.83l8.49-8.49"/></svg></button>
+        <input id="file-input" class="sr-only" type="file">
+        <label class="message-input-wrap"><span class="sr-only">Write a message</span><input id="message-input" type="text" placeholder="Write a message..." autocomplete="off" maxlength="1000"></label>
+        <button class="icon-button emoji-button" type="button" id="emoji-button" aria-label="Add a smile" title="Add a smile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></button>
+        <button class="send-button" type="submit" aria-label="Send message"><span>Send</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+      </form>
+      <p class="composer-note"><span class="lock-icon" aria-hidden="true">⌑</span> Your messages are private</p>
+    </section>
+    <dialog id="new-chat-dialog" class="app-dialog">
+      <form id="new-chat-form">
+        <h2>Start a conversation</h2>
+        <label for="new-contact-name">Contact name</label>
+        <input id="new-contact-name" name="name" type="text" maxlength="60" placeholder="Enter a name" required>
+        <div class="dialog-actions"><button class="dialog-cancel" type="button" id="cancel-new-chat">Cancel</button><button class="send-button" type="submit">Start chat</button></div>
+      </form>
+    </dialog>
+    <dialog id="details-dialog" class="app-dialog details-dialog">
+      <form method="dialog"><h2 id="details-title">Contact details</h2><p id="details-copy"></p><div class="dialog-actions"><button class="send-button" type="submit">Done</button></div></form>
+    </dialog>
+    <p id="live-status" class="sr-only" aria-live="polite"></p>
+  </main>
+</body>
+</html>
